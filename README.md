@@ -56,7 +56,7 @@ An open source training utility for Counter-Strike: Global Offensive on Linux.
 git clone https://github.com/k0ez13/N3WTuX
 cd N3WTuX
 chmod +x toolbox.sh
-./toolbox.sh -p -u -b -l # pull, unload cheat if currently injected, build and then load, use -h for help
+./toolbox.sh -p -u -b -l # pull; unload cheat if currently injected, build and then load, use -h for help
 ```
 
 
