@@ -15,54 +15,6 @@ fi
 sudo rm -rf /tmp/dumps
 sudo mkdir -p --mode=000 /tmp/dumps
 
-function unload {
-csgo_pid=$(pidof csgo_linux64)
-filename=$(cat build_id)
-filename_old=$(cat build_id_old)
-
-if [ -f build_id ]; then
-    if grep -q "$filename" /proc/"$csgo_pid"/maps; then
-    echo "unloading $filename"
-    sudo gdb -n -q -batch-silent \
-        -ex "set logging on" \
-        -ex "set logging file /dev/null" \
-        -ex "set logging redirect on" \
-        -ex "attach $csgo_pid" \
-        -ex "set \$dlopen = (void*(*)(char*, int)) dlopen" \
-        -ex "set \$dlclose = (int(*)(void*)) dlclose" \
-        -ex "set \$library = \$dlopen(\"/usr/lib/$filename\", 6)" \
-        -ex "call \$dlclose(\$library)" \
-        -ex "call \$dlclose(\$library)" \
-        -ex "detach" \
-        -ex "quit"
-    sudo rm "/usr/lib/${filename}"
-    fi
-fi
-
-# "build_id_old" is used for unloading in case you rebuild while injected.
-if [ -f build_id_old ]; then
-    if grep -q "$filename_old" /proc/"$csgo_pid"/maps; then
-    echo "unloading old file - $filename_old"
-    sudo gdb -n -q -batch-silent \
-        -ex "set logging on" \
-        -ex "set logging file /dev/null" \
-        -ex "set logging redirect on" \
-        -ex "attach $csgo_pid" \
-        -ex "set \$dlopen = (void*(*)(char*, int)) dlopen" \
-        -ex "set \$dlclose = (int(*)(void*)) dlclose" \
-        -ex "set \$library = \$dlopen(\"/usr/lib/$filename_old\", 6)" \
-        -ex "call \$dlclose(\$library)" \
-        -ex "call \$dlclose(\$library)" \
-        -ex "detach" \
-        -ex "quit"
-    sudo rm "/usr/lib/${filename_old}"
-    fi
-fi
-
-echo "Done. See CS:GO Console."
-
-}
-
 function load {
  function echo_green {
 	echo -e "\\e[32m$*\\e[0m"
@@ -272,10 +224,6 @@ while [[ $# -gt 0 ]]
 do
 keys="$1"
 case $keys in
-    -u|--unload)
-        unload
-        shift
-        ;;
     -l|--load)
         load
         shift
@@ -302,8 +250,6 @@ case $keys in
 Toolbox script for N3WTuX the beste lincuck cheat 2021
 =======================================================================
 | Argument             | Description                                  |
-| -------------------- | -------------------------------------------- |
-| -u (--unload)        | Unload the cheat from CS:GO if loaded.       |
 | -l (--load)          | Load/inject the cheat via gdb.               |
 | -ld (--load_debug)   | Load/inject the cheat and debug via gdb.     |
 | -b (--build)         | Build to the build/ dir.                     |
@@ -313,7 +259,7 @@ Toolbox script for N3WTuX the beste lincuck cheat 2021
 =======================================================================
 
 All args are executed in the order they are written in, for
-example, \"-p -u -b -l\" would update the cheat, then unload, then build it, and
+example, \"-p -b -l\" would update the cheat, then unload, then build it, and
 then load it back into csgo.
 "
         exit
