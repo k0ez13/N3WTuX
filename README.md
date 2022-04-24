@@ -20,7 +20,7 @@
 git clone https://github.com/k0ez13/N3WTuX
 cd N3WTuX
 chmod +x toolbox.sh
-./toolbox.sh -p -u -b -l # pull, unload cheat if currently injected, build and then load, use -h for help
+./toolbox.sh -p -b -l # pull, build and then load, use -h for help
 ```
 
 
@@ -28,7 +28,6 @@ chmod +x toolbox.sh
 
 | Argument           | Description                             |
 | ------------------ | --------------------------------------- |
-| -u (--unload)      | Unload the cheat from CS:GO if loaded   |
 | -l (--load)        | Load/inject the cheat via gdb           |
 | -ld (--load_debug) | Load/inject the cheat and debug via gdb |
 | -b (--build)       | Build to the build/ dir                 |
@@ -36,5 +35,5 @@ chmod +x toolbox.sh
 | -p (--pull)        | Update the cheat                        |
 | -h (--help)        | Show help                               |
 
-All args are executed in the order they are written in, for example, "-u -b -l" would unload the cheat, build it, and then load it back into csgo.
+All args are executed in the order they are written in, for example, "-b -l" would build it, and then load it back into csgo.
 
