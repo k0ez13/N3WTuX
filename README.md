@@ -40,10 +40,12 @@ All args are executed in the order they are written in, for example, "-b -l" wou
 
 ## Credits
 
-Special thanks to the Original AimTux project: https://github.com/AimTuxOfficial/AimTux.
 
-Special thanks to the Fuzion For Panaroma Update And For Quality Codes: https://github.com/LWSS/Fuzion.
+Special thanks to the Missedit projetc < https://github.com/HackerPolice/MissedIT
+Special thanks to the Original AimTux project > https://github.com/AimTuxOfficial/AimTux.
 
-Special thanks to the Nimbus project : https://github.com/NimbusProjects/Nimbus
+Special thanks to the Fuzion For Panaroma Update And For Quality Codes > https://github.com/LWSS/Fuzion.
 
-Special thanks to the Gamesneeze project : https://github.com/seksea/gamesneeze
+Special thanks to the Nimbus project > https://github.com/NimbusProjects/Nimbus
+
+Special thanks to the Gamesneeze project > https://github.com/seksea/gamesneeze
