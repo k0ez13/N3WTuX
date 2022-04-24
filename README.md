@@ -1,39 +1,3 @@
-<p align="center">
-  <a href="/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"></a>
-  <a><img src="https://img.shields.io/badge/OS-Linux-green.svg" alt="Linux"></a>
-  <a><img src="https://img.shields.io/badge/Cheat-CS:GO-green.svg" alt="CS:GO cheat"></a>
-  <a><img src="https://img.shields.io/badge/State-Maintained-green.svg" alt="Maintained"></a>
-  <a><img src="https://img.shields.io/badge/Detection-Undetected-green.svg" alt="Detection: Undetected"></a>
-  <a href="https://discord.gg/SCHsWHFJMb"><img src="https://img.shields.io/badge/Chat-Discord-blue.svg" alt="Discord"></a>
-</p>
-
-An open source training utility for Counter-Strike: Global Offensive on Linux.
-
-
-
-## Current Features
-
-### Features
-
- - Basic GDB injector
- - ImGui menu
- - ESP
- - Weapon ESP
- - Chicken/Fish ESP
- - Force square radar
- - Recoil crosshair
- - Rank revealer
- - Backtracking
- - Backtrack Chams
- - Flappy Bird clone
- - Legitbot
- - Hitmarkers
- - Nightmode
- - JumpBug
- - EdgeBug
- - Edge Jump
-
-
 ## How to use
 
 ### Debian / Ubuntu / Pop OS / Linux Mint required packages:
