@@ -259,7 +259,7 @@ Toolbox script for N3WTuX the beste lincuck cheat 2021
 =======================================================================
 
 All args are executed in the order they are written in, for
-example, \"-p -b -l\" would update the cheat, then unload, then build it, and
+example, \"-p -b -l\" would update the cheat, then build it, and
 then load it back into csgo.
 "
         exit
