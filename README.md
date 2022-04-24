@@ -37,3 +37,13 @@ chmod +x toolbox.sh
 
 All args are executed in the order they are written in, for example, "-b -l" would build it, and then load it back into csgo.
 
+
+## Credits
+
+Special thanks to the Original AimTux project: https://github.com/AimTuxOfficial/AimTux.
+
+Special thanks to the Fuzion For Panaroma Update And For Quality Codes: https://github.com/LWSS/Fuzion.
+
+Special thanks to the Nimbus project : https://github.com/NimbusProjects/Nimbus
+
+Special thanks to the Gamesneeze project : https://github.com/seksea/gamesneeze
