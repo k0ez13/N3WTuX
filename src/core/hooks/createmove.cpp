@@ -21,7 +21,7 @@ bool Hooks::CreateMove::hook(void* thisptr, float flInputSampleTime, CUserCmd* c
 
         startMovementFix(cmd);
             Features::RankReveal::createMove(cmd);
-            //Features::FastDuck::createMove(cmd);
+            Features::FastDuck::createMove(cmd);
            // Features::UseSpam::createMove(cmd);
             Features::Movement::prePredCreateMove(cmd);
 

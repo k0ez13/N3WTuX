@@ -89,9 +89,9 @@ namespace Features {
     namespace Radar {
         void espPlayerLoop(Player* p);
     }
-    /*namespace FastDuck {
+    namespace FastDuck {
         void createMove(CUserCmd *cmd);
-    }*/
+    }
     namespace Triggerbot {
         void createMove(CUserCmd* cmd);
     }
