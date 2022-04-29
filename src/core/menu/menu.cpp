@@ -63,6 +63,7 @@ void style() {
     ImGui::GetStyle().TabRounding = 2;
 }
 
+
 void Menu::onPollEvent(SDL_Event* event, const int result) {
     if (result && ImGui_ImplSDL2_ProcessEvent(event) && Menu::open) {
         event->type = 0;
@@ -119,7 +120,6 @@ void Menu::onSwapWindow(SDL_Window* window) {
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-
 void Menu::drawMenu() {
     ImGui::SetNextWindowSize(ImVec2{900, 627});
     ImGui::Begin("N3WTuX", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
@@ -142,10 +142,10 @@ void Menu::drawMenu() {
     ImGui::SameLine();
     ImGui::PopStyleVar();
 
-    auto bWidth = ImVec2(115, 20); //80
+    auto bWidth = ImVec2(115, 20); //115 20
     ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(2, 5));
 
-    ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 0) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
+    ImGui::GetStyle().Colors[:ImGuiCol_Button] = (Menu::tabSelected == 0) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
     if (ImGui::Button("Legit", bWidth)) {
         Menu::tabSelected = 0;
     } ImGui::SameLine();
