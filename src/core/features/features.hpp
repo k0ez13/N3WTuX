@@ -80,6 +80,11 @@ namespace Features {
     namespace FlappyBird {
         void draw();
     }
+
+    namespace BlockBot {
+    	void createMove(CUserCmd* cmd);
+    }
+    
     /*namespace UseSpam {
         void createMove(CUserCmd* cmd);
     }*/
@@ -130,6 +135,11 @@ namespace Features {
     namespace BulletTracers {
         void event(IGameEvent* event);
     }
+
+    namespace VoteRevealer {
+    	void event(IGameEvent* event);
+    }
+
     namespace Movement {
         inline int flagsBackup;
         inline Vector velBackup;

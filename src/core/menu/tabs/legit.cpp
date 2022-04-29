@@ -1,7 +1,7 @@
 #include "../menu.hpp"
 #include <sstream>
 
-/*void hitboxSelectBox(const char* configVarName) {
+void hitboxSelectBox(const char* configVarName) {
     ImGui::Text("Hitboxes");
     ImGui::SetNextItemWidth(ImGui::GetWindowContentRegionWidth());
 
@@ -33,23 +33,13 @@
 
         ImGui::EndCombo();
     }
-}*/
+}
 
 void Menu::drawLegitTab() {
     ImGui::BeginChild("LegitBot", ImVec2(ImGui::GetWindowContentRegionWidth() * 0.65f, 260), true); {
-        
-        ImGui::Text("Backtrack");
+        ImGui::Text("LegitBot");
         ImGui::Separator();
-        ImGui::Checkbox("Backtrack", &CONFIGBOOL("Legit>Backtrack>Backtrack"));
-        if (CONFIGBOOL("Legit>Backtrack>Backtrack")) {
-            ImGui::Text("Backtrack Ticks");
-            ImGui::SetNextItemWidth(ImGui::GetWindowContentRegionWidth());
-            ImGui::SliderInt("##Backtrack Ticks", &CONFIGINT("Legit>Backtrack>Backtrack Ticks"), 1, 12);
-        }
-        ImGui::Checkbox("Simple Forwardtracking", &CONFIGBOOL("Legit>Backtrack>Simple Forwardtracking"));
-        ImGui::EndChild();
-    }
-        /*if (ImGui::BeginTabBar("Aim Weapons Tabbar")) {
+        if (ImGui::BeginTabBar("Aim Weapons Tabbar")) {
             if (ImGui::BeginTabItem("Default")) {
                 static bool keybindToggled;
                 Menu::CustomWidgets::drawKeyBinder("Key", &CONFIGINT("Legit>LegitBot>Default>Key"), &keybindToggled);
@@ -163,11 +153,9 @@ void Menu::drawLegitTab() {
                 ImGui::EndTabItem();
             }
         ImGui::EndTabBar();
-        }*
+        }
         ImGui::EndChild();
-    }*/
-  //  ImGui::EndChild();
-//}
+    }
     ImGui::SameLine();
     ImGui::BeginChild("Triggerbot", ImVec2(0, 260), true); {
         ImGui::Text("Triggerbot");
@@ -190,7 +178,7 @@ void Menu::drawLegitTab() {
 
         ImGui::EndChild();
     }
-    /*ImGui::BeginChild("Backtrack", ImVec2(0, 260), true); {
+    ImGui::BeginChild("Backtrack", ImVec2(0, 260), true); {
         ImGui::Text("Backtrack");
         ImGui::Separator();
         ImGui::Checkbox("Backtrack", &CONFIGBOOL("Legit>Backtrack>Backtrack"));
@@ -201,5 +189,5 @@ void Menu::drawLegitTab() {
         }
         ImGui::Checkbox("Simple Forwardtracking", &CONFIGBOOL("Legit>Backtrack>Simple Forwardtracking"));
         ImGui::EndChild();
-    }*/
+    }
 }

@@ -31,7 +31,7 @@ bool Hooks::CreateMove::hook(void* thisptr, float flInputSampleTime, CUserCmd* c
                     //Features::AntiAim::createMove(cmd);
                 }
                 else {
-                    //Features::LegitBot::createMove(cmd);
+                    Features::LegitBot::createMove(cmd);
                     Features::Triggerbot::createMove(cmd);
                     Features::Backtrack::store(cmd);
                     Features::Backtrack::createMove(cmd);
@@ -49,6 +49,7 @@ bool Hooks::CreateMove::hook(void* thisptr, float flInputSampleTime, CUserCmd* c
 
         auto view_backup = cmd->viewangles;
         Features::Movement::edgeBugPredictor(cmd);
+        Features::BlockBot::createMove(cmd);
         startMovementFix(cmd);
         cmd->viewangles = view_backup;
         endMovementFix(cmd);

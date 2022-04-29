@@ -12,10 +12,20 @@ void Menu::drawMiscTab() {
                 ImGui::Separator();
                 ImGui::Checkbox("Developer window", &devWindow);
                 ImGui::Checkbox("Disable Watermark", &CONFIGBOOL("Misc>Misc>Misc>Disable Watermark"));
+
                 ImGui::Checkbox("Force square radar", &CONFIGBOOL("Misc>Misc>Misc>Force square radar"));
                 ImGui::Checkbox("Rank Revealer", &CONFIGBOOL("Misc>Misc>Misc>Rank Revealer"));
+                ImGui::Checkbox("Vote Revealer", &CONFIGBOOL("Misc>Misc>Misc>Vote Revealer"));
+                if (CONFIGBOOL("Misc>Misc>Misc>Vote Revealer")) {
+                	ImGui::SameLine();
+                	ImGui::Checkbox("Reveal Enemy Votes", &CONFIGBOOL("Misc>Misc>Misc>Enemy Vote Revealer"));
+                }
 
                 ImGui::Checkbox("Spectators", &CONFIGBOOL("Misc>Misc>Misc>Spectators"));
+                if (CONFIGBOOL("Misc>Misc>Misc>Spectators")) {
+                	ImGui::SameLine();
+                	ImGui::Checkbox("Show All", &CONFIGBOOL("Misc>Misc>Misc>Show All Spectators"));
+                }
                 ImGui::Checkbox("Player List", &CONFIGBOOL("Misc>Misc>Misc>Player List"));
                 if (CONFIGBOOL("Misc>Misc>Misc>Player List")) {
                     ImGui::SameLine();
@@ -39,6 +49,7 @@ void Menu::drawMiscTab() {
                 ImGui::Checkbox("Disable Post Processing", &CONFIGBOOL("Misc>Misc>Misc>Disable Post Processing"));
                 ImGui::EndChild();
             }
+
 
             ImGui::BeginChild("Hitmarkers", ImVec2(ImGui::GetWindowContentRegionWidth() * 0.61, ImGui::GetWindowHeight() * 0.21f), true); {
                 ImGui::Text("Hitmarkers");
@@ -124,6 +135,13 @@ void Menu::drawMiscTab() {
                     Menu::CustomWidgets::drawKeyBinder("Key", &CONFIGINT("Misc>Misc>Movement>EdgeBug Key"), &toggled);
                     ImGui::SameLine();
                 }
+
+               if (CONFIGBOOL("Misc>Misc>Movement>Block Bot")) {
+                	static bool toggled = false;
+                	Menu::CustomWidgets::drawKeyBinder("Key", &CONFIGINT("Misc>Misc>Movement>Block Bot Key"), &toggled);
+                	ImGui::SameLine();
+                }
+                ImGui::Checkbox("Block Bot", &CONFIGBOOL("Misc>Misc>Movement>Block Bot"));
                 ImGui::Checkbox("EdgeBug", &CONFIGBOOL("Misc>Misc>Movement>EdgeBug"));
                 ImGui::Checkbox("Fast Duck", &CONFIGBOOL("Misc>Misc>Movement>Fast Duck"));
                 ImGui::SameLine();

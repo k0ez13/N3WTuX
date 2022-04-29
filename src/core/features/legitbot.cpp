@@ -1,4 +1,4 @@
-/*#include "../../includes.hpp"
+#include "../../includes.hpp"
 #include "features.hpp"
 #include <algorithm>
 
@@ -121,4 +121,4 @@ void Features::LegitBot::createMove(CUserCmd* cmd) {
             }
         }
     }
-}*/ 
+}
