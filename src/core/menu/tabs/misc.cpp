@@ -6,8 +6,8 @@ void Menu::drawMiscTab() {
     if (ImGui::BeginTabBar("##miscTabs")) {
         if (ImGui::BeginTabItem("Misc")) {
             ImGui::Columns(2, NULL, false);
-            ImGui::SetColumnWidth(-1, ImGui::GetWindowContentRegionWidth() * 0.62);
-            ImGui::BeginChild("Misc", ImVec2(ImGui::GetWindowContentRegionWidth() * 0.61, ImGui::GetWindowHeight() * 0.64f), true); {
+            ImGui::SetColumnWidth(-1, ImGui::GetWindowContentRegionWidth() * 0.62); //061 //064
+            ImGui::BeginChild("Misc", ImVec2(ImGui::GetWindowContentRegionWidth() * 0.61, ImGui::GetWindowHeight() * 0.52f), true); {
                 ImGui::Text("Misc");
                 ImGui::Separator();
                 ImGui::Checkbox("Developer window", &devWindow);
@@ -150,50 +150,11 @@ void Menu::drawMiscTab() {
                     ImGui::SetTooltip("May cause untrusted, use at own risk!");
                 ImGui::EndChild();
             }
-            ImGui::Columns(1);
-            ImGui::TextDisabled("Credits!");
-            if (ImGui::IsItemHovered())
-                ImGui::SetTooltip("sekc (of course)\nAll other contributors on GitHub (xXx-sans-xXx, luk1337, cristeigabriel, crazily, dave (@dweee), keenan, u2ooS, tango1337, nigma1337, vampur, all and any other contributors, and allbombson)\nand ocornut for his great ImGui UI framework");
-            ImGui::EndTabItem();
-        }
+                ImGui::Columns(1);
+                ImGui::EndTabItem();
 
-        /*if (ImGui::BeginTabItem("Skins")) {
-            static ItemIndex curWeaponSelected = ItemIndex::WEAPON_AK47;
-            if (ImGui::BeginCombo("Weapon", itemIndexMap.at(curWeaponSelected))) {
-                for (auto item : itemIndexMap) {
-                    if (item.first != ItemIndex::INVALID) {
-                        ImGui::PushID(item.second);
-                        const bool is_selected = (itemIndexMap.at(curWeaponSelected) == item.second);
-                        if (ImGui::Selectable(item.second, is_selected)) {
-                            curWeaponSelected = item.first;
-                            FULLUPDATE();
-                        }
-                        ImGui::PopID();
-                    }
-                }
-                ImGui::EndCombo();
-            }
-            if (curWeaponSelected != ItemIndex::INVALID) {
-                char* buf = new char[256];
-                snprintf(buf, 256, "Misc>Skins>Skins>%s>PaintKit", itemIndexMap.at(curWeaponSelected));
-                if (ImGui::DragInt("PaintKit", &CONFIGINT(buf))) {
-                    FULLUPDATE();
-                }
-
-                char* buf2 = new char[256];
-                snprintf(buf2, 256, "Misc>Skins>Skins>%s>Wear", itemIndexMap.at(curWeaponSelected));
-                if (ImGui::SliderInt("Wear", &CONFIGINT(buf2), 0, 100)) {
-                    FULLUPDATE();
-                }
-
-                char* buf3 = new char[256];
-                snprintf(buf3, 256, "Misc>Skins>Skins>%s>StatTrack", itemIndexMap.at(curWeaponSelected));
-                if (ImGui::DragInt("StatTrack", &CONFIGINT(buf3))) {
-                    FULLUPDATE();
-                }
-            }
-            ImGui::EndTabItem();
-        }*/
-        ImGui::EndTabBar();
     }
+            ImGui::EndTabBar();
+  }
+    
 }

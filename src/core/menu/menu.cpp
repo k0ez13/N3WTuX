@@ -120,11 +120,12 @@ void Menu::onSwapWindow(SDL_Window* window) {
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
+
 void Menu::drawMenu() {
-    ImGui::SetNextWindowSize(ImVec2{900, 627});
-    ImGui::Begin("N3WTuX", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
-    ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 4));
-    ImGui::Text("N3W"); ImGui::SameLine(); ImGui::PopStyleVar();
+    ImGui::SetNextWindowSize(ImVec2{928, 620});
+    ImGui::Begin("N3WTuX", NULL, /*ImGuiWindowFlags_NoTitleBar |*/ ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+    ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 3));
+    /*ImGui::Text("N3W"); ImGui::SameLine(); ImGui::PopStyleVar();
     if (ImGui::IsItemClicked()) {
         system("xdg-open https://discord.gg/SCHsWHFJMb &"); //if it works it works lmao
     }
@@ -139,13 +140,12 @@ void Menu::drawMenu() {
     if (ImGui::IsItemHovered()) {
         ImGui::SetTooltip("Click for discord!");
     }
-    ImGui::SameLine();
+    ImGui::SameLine();*/
     ImGui::PopStyleVar();
-
     auto bWidth = ImVec2(115, 20); //115 20
     ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(2, 5));
 
-    ImGui::GetStyle().Colors[:ImGuiCol_Button] = (Menu::tabSelected == 0) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
+    ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 0) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
     if (ImGui::Button("Legit", bWidth)) {
         Menu::tabSelected = 0;
     } ImGui::SameLine();
