@@ -157,7 +157,7 @@ void Menu::drawLegitTab() {
         ImGui::EndChild();
     }
     ImGui::SameLine();
-    ImGui::BeginChild("Triggerbot", ImVec2(0, 260), true); {
+  ImGui::BeginChild("Triggerbot", ImVec2(0, 260), true); {
         ImGui::Text("Triggerbot");
         ImGui::Separator();
         if (CONFIGBOOL("Legit>Triggerbot>Triggerbot")) {
@@ -174,19 +174,7 @@ void Menu::drawLegitTab() {
             ImGui::Text("Body Hitchance");
             ImGui::SetNextItemWidth(ImGui::GetWindowContentRegionWidth());
             ImGui::SliderInt("##Body Hitchance", &CONFIGINT("Legit>Triggerbot>Body Hitchance"), 0, 100);
-
-            ImGui::Text("Triggerbot Delay");
-            ImGui::SetNextItemWidth(ImGui::GetWindowContentRegionWidth());
-            ImGui::SliderInt("##Triggerbot Delay", &CONFIGINT("Legit>Triggerbot>Delay"), 0, 500);
-
-            ImGui::Checkbox("Magnetic", &CONFIGBOOL("Legit>Triggerbot>Magnetic"));
-            ImGui::Checkbox("Safe", &CONFIGBOOL("Legit>Triggerbot>Safe"));
-            ImGui::SameLine();
-            ImGui::TextDisabled("?");
-            if (ImGui::IsItemHovered())
-                ImGui::SetTooltip("If enabled, it will only shoot if the crosshair has been on the enemy for blank ms\nIf disabled, it will shoot blank ms after being on the enemy");
         }
-
         ImGui::EndChild();
     }
     ImGui::BeginChild("Backtrack", ImVec2(0, 260), true); {
