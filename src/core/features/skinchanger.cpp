@@ -8,7 +8,7 @@ void Features::SkinChanger::frameStageNotify(FrameStage frame) {
         try {
             if (weapon && weapon->itemIndex() != ItemIndex::INVALID) {
                 const char* weaponName = itemIndexMap.at(weapon->itemIndex());
-                
+
                 char buf[256];
                 snprintf(buf, 256, "Misc>Skins>Skins>%s>PaintKit", weaponName);
 

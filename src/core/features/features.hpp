@@ -29,9 +29,11 @@ namespace Features {
         void frameStageNotify(FrameStage frame);
         void draw();
     }
-    /*namespace SkinChanger {
+    namespace SkinChanger {
         void frameStageNotify(FrameStage frame);
-    }*/
+        void frameStageNotifyModels(FrameStage stage);
+
+    }
     namespace LegitBot {
         void createMove(CUserCmd* cmd);
     }
