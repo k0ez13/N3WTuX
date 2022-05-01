@@ -35,8 +35,9 @@ void hitboxSelectBox(const char* configVarName) {
     }
 }
 
+//65 
 void Menu::drawLegitTab() {
-    ImGui::BeginChild("LegitBot", ImVec2(ImGui::GetWindowContentRegionWidth() * 0.65f, 260), true); {
+    ImGui::BeginChild("LegitBot",ImVec2(ImGui::GetWindowContentRegionWidth() * 0.65f, 260), true); {
         ImGui::Text("LegitBot");
         ImGui::Separator();
         if (ImGui::BeginTabBar("Aim Weapons Tabbar")) {

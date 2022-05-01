@@ -120,35 +120,19 @@ void Menu::onSwapWindow(SDL_Window* window) {
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-
 void Menu::drawMenu() {
-    ImGui::SetNextWindowSize(ImVec2{928, 620});
+    ImGui::SetNextWindowSize(ImVec2{1100, 620});
     ImGui::Begin("N3WTuX", NULL, /*ImGuiWindowFlags_NoTitleBar |*/ ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
-    ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 3));
-    /*ImGui::Text("N3W"); ImGui::SameLine(); ImGui::PopStyleVar();
-    if (ImGui::IsItemClicked()) {
-        system("xdg-open https://discord.gg/SCHsWHFJMb &"); //if it works it works lmao
-    }
-    if (ImGui::IsItemHovered()) {
-        ImGui::SetTooltip("Click for discord!");
-    }
-    ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(490, 5));
-    ImGui::TextColored(ImColor(3, 78, 247, 255), "TuX");
-    if (ImGui::IsItemClicked()) {
-        system("xdg-open https://discord.gg/SCHsWHFJMb &"); //if it works it works lmao
-    }
-    if (ImGui::IsItemHovered()) {
-        ImGui::SetTooltip("Click for discord!");
-    }
-    ImGui::SameLine();*/
-    ImGui::PopStyleVar();
-    auto bWidth = ImVec2(115, 20); //115 20
+    auto bWidth = ImVec2(119, 90); //115 20
     ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(2, 5));
+
+
+    ImGui::BeginChild("pane1", ImVec2(135, 0), true);
 
     ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 0) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
     if (ImGui::Button("Legit", bWidth)) {
         Menu::tabSelected = 0;
-    } ImGui::SameLine();
+    } //ImGui::SameLine();
 
     /*ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 1) ? ImVec4(0.05f, 0.41f, 0.06f, 0.62f) : ImVec4(0.03f, 0.23f, 0.04f, 0.62f);
     if (ImGui::Button("Rage", bWidth)) {
@@ -158,7 +142,7 @@ void Menu::drawMenu() {
     ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 2) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
     if (ImGui::Button("Visuals", bWidth)) {
         Menu::tabSelected = 1;
-    } ImGui::SameLine();
+    } //ImGui::SameLine();
 
     ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 3) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
     if (ImGui::Button("Misc", bWidth)) {
@@ -167,8 +151,14 @@ void Menu::drawMenu() {
     ImGui::GetStyle().Colors[ImGuiCol_Button] = ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
     ImGui::PopStyleVar();
 
-    ImGui::Separator();
-    ImGui::Separator();
+    ImGui::EndChild();
+
+    ImGui::SameLine();
+
+
+    ImGui::BeginChild("pane2", ImVec2(0, 0), true);
+    //ImGui::Separator();
+    //ImGui::Separator();
 
     switch(tabSelected) {
         case 0: {
@@ -184,6 +174,8 @@ void Menu::drawMenu() {
             Menu::drawMiscTab();break;
         }*/
     }
+    ImGui::EndChild();
+
 
     ImGui::End();
 }
