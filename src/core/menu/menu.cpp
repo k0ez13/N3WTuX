@@ -130,7 +130,7 @@ void Menu::drawMenu() {
     ImGui::BeginChild("pane1", ImVec2(135, 0), true);
 
     ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 0) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
-    if (ImGui::Button("Legit", bWidth)) {
+    if (ImGui::Button("Aim", bWidth)) {
         Menu::tabSelected = 0;
     } //ImGui::SameLine();
 

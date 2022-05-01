@@ -1,7 +1,9 @@
 <p align="center">
   <img src="/lsx/menu.png" alt="N3WTuX">
 </p>
-## How to use
+
+
+### How to use
 
 ### Debian / Ubuntu / Pop OS / Linux Mint required packages:
 
