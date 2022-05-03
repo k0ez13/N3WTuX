@@ -70,6 +70,74 @@ bool checkEdgebug() {
            Globals::localPlayer->moveType() != MOVETYPE_LADDER;
 }
 
+/*
+static void LegitStrafe(Player *localplayer, CUserCmd *cmd)
+{
+	if (Globals::localPlayer->flags() & FL_ONGROUND) {
+		return;
+	}
+
+	if (cmd->buttons & IN_FORWARD || cmd->buttons & IN_BACK || cmd->buttons & IN_MOVELEFT ||
+	    cmd->buttons & IN_MOVERIGHT) {
+		return;
+	}
+
+	if (cmd->mousedx <= 1 && cmd->mousedx >= -1) {
+		return;
+	}
+
+	switch (Settings::AutoStrafe::type) {
+		case AutostrafeType::AS_FORWARDS:
+			cmd->sidemove = cmd->mousedx < 0.f ? -250.f : 250.f;
+			break;
+		case AutostrafeType::AS_BACKWARDS:
+			cmd->sidemove = cmd->mousedx < 0.f ? 250.f : -250.f;
+			break;
+		case AutostrafeType::AS_LEFTSIDEWAYS:
+			cmd->forwardmove = cmd->mousedx < 0.f ? -250.f : 250.f;
+			break;
+		case AutostrafeType::AS_RIGHTSIDEWAYS:
+			cmd->forwardmove = cmd->mousedx < 0.f ? 250.f : -250.f;
+			break;
+		default:
+			break;
+	}
+}
+
+
+void AutoStrafe_CreateMove(CUserCmd *cmd)
+{
+	if (!CONFIGBOOL("Misc>Misc>Movement>Autostrafe") {
+		return;
+	}
+
+	Player *localplayer = (Player *) Interfaces::entityList->GetClientEntity(Interfaces::engine->GetLocalPlayer());
+	if (!localplayer) {
+		return;
+	}
+
+	if (!Globals::localPlayer->health() <= 0) {
+		return;
+	}
+
+	if (Globals::localPlayer->flags() == MOVETYPE_LADDER || Globals::localPlayer->flags() == MOVETYPE_NOCLIP) {
+		return;
+	}
+
+	switch (Settings::AutoStrafe::type) {
+		case AutostrafeType::AS_FORWARDS:
+		case AutostrafeType::AS_BACKWARDS:
+		case AutostrafeType::AS_LEFTSIDEWAYS:
+		case AutostrafeType::AS_RIGHTSIDEWAYS:
+			LegitStrafe(localplayer, cmd);
+			break;
+		case AutostrafeType::AS_RAGE:
+			RageStrafe(localplayer, cmd);
+			break;
+	}
+}
+
+*/
 void Features::Movement::prePredCreateMove(CUserCmd *cmd) {
     if (!Globals::localPlayer)
         return;

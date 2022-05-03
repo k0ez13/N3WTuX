@@ -30,3 +30,12 @@ namespace Menu {
         bool isKeyDown(int key);
     }
 }
+
+
+class c_gui
+{
+public:
+    bool tab(const char* name, bool active, ImVec2 size_arg);
+};
+
+

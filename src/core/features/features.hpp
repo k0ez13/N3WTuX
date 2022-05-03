@@ -151,6 +151,8 @@ namespace Features {
         void prePredCreateMove(CUserCmd* cmd);
         void postPredCreateMove(CUserCmd* cmd);
         void edgeBugPredictor(CUserCmd* cmd);
+        static void LegitStrafe(Player *localplayer, CUserCmd *cmd);
+        void AutoStrafe_CreateMove(CUserCmd *cmd);
         void draw();
     }
 }

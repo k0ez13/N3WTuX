@@ -64,14 +64,19 @@ void style() {
 }
 
 
-void Menu::onPollEvent(SDL_Event* event, const int result) {
-    if (result && ImGui_ImplSDL2_ProcessEvent(event) && Menu::open) {
+void Menu::onPollEvent(SDL_Event* event, const int result) 
+{
+    if (result && ImGui_ImplSDL2_ProcessEvent(event) && Menu::open) 
+    {
         event->type = 0;
     }
 }
 
-void Menu::onSwapWindow(SDL_Window* window) {
-    if (!initialised) {
+
+void Menu::onSwapWindow(SDL_Window* window) 
+{
+    if (!initialised) 
+    {
         gl3wInit();
         IMGUI_CHECKVERSION();
         ImGui::CreateContext();
@@ -96,22 +101,27 @@ void Menu::onSwapWindow(SDL_Window* window) {
     ImGui::NewFrame();
 
     Menu::drawOverlay(ImGui::GetBackgroundDrawList());
-    if (Menu::open) {
+    if (Menu::open) 
+    {
         io.MouseDrawCursor = true; // TODO: find workaround at some point because ugly
         Menu::drawMenu();
-        if (devWindow) {
+        if (devWindow) 
+        {
             drawDevWindow();
         }
-        if (demoWindow) {
+        if (demoWindow) 
+        {
             ImGui::ShowDemoWindow();
         }
     }
-    else {
+    else 
+    {
         io.MouseDrawCursor = false;
     }
 
 
-    if (ImGui::IsKeyPressed(SDL_SCANCODE_INSERT, false)) {
+    if (ImGui::IsKeyPressed(SDL_SCANCODE_INSERT, false)) 
+    {
         Config::reloadCfgList();
         Menu::open = !Menu::open;
     }
@@ -120,9 +130,11 @@ void Menu::onSwapWindow(SDL_Window* window) {
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-void Menu::drawMenu() {
+
+void Menu::drawMenu() 
+{
     ImGui::SetNextWindowSize(ImVec2{1100, 620});
-    ImGui::Begin("N3WTuX", NULL, /*ImGuiWindowFlags_NoTitleBar |*/ ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+    ImGui::Begin("N3WTuX", NULL,  ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
     auto bWidth = ImVec2(119, 90); //115 20
     ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(2, 5));
 
@@ -130,22 +142,25 @@ void Menu::drawMenu() {
     ImGui::BeginChild("pane1", ImVec2(135, 0), true);
 
     ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 0) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
-    if (ImGui::Button("Aim", bWidth)) {
+    if (ImGui::Button("Aim", bWidth)) 
+    {
         Menu::tabSelected = 0;
     } //ImGui::SameLine();
 
-    /*ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 1) ? ImVec4(0.05f, 0.41f, 0.06f, 0.62f) : ImVec4(0.03f, 0.23f, 0.04f, 0.62f);
-    if (ImGui::Button("Rage", bWidth)) {
-        Menu::tabSelected = 1;
-    } ImGui::SameLine();*/
+    //ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 1) ? ImVec4(0.05f, 0.41f, 0.06f, 0.62f) : ImVec4(0.03f, 0.23f, 0.04f, 0.62f);
+    //if (ImGui::Button("Rage", bWidth)) {
+    //    Menu::tabSelected = 1;
+    //} ImGui::SameLine();*
 
     ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 2) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
-    if (ImGui::Button("Visuals", bWidth)) {
+    if (ImGui::Button("Visuals", bWidth)) 
+    {
         Menu::tabSelected = 1;
     } //ImGui::SameLine();
 
     ImGui::GetStyle().Colors[ImGuiCol_Button] = (Menu::tabSelected == 3) ? ImVec4(0.011f, 0.305f, 0.970f, 0.62f) : ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
-    if (ImGui::Button("Misc", bWidth)) {
+    if (ImGui::Button("Misc", bWidth)) 
+    {
         Menu::tabSelected = 2;
     }
     ImGui::GetStyle().Colors[ImGuiCol_Button] = ImVec4(0.011f, 0.305f, 0.970f, 0.62f);
@@ -160,22 +175,26 @@ void Menu::drawMenu() {
     //ImGui::Separator();
     //ImGui::Separator();
 
-    switch(tabSelected) {
-        case 0: {
+    switch(tabSelected) 
+    {
+        case 0: 
+        {
             Menu::drawLegitTab(); break;
         }
-        case 1: {
+        case 1: 
+        {
             Menu::drawVisualsTab(); break;
         }
-        case 2: {
+        case 2: 
+        {
             Menu::drawMiscTab(); break;
         }
-        /*case 3: {
-            Menu::drawMiscTab();break;
-        }*/
+        ///case 3: {
+          //  Menu::drawMiscTab();break;
+        //}
     }
     ImGui::EndChild();
 
 
     ImGui::End();
-}
+} 
