@@ -22,9 +22,9 @@ bool Hooks::init() {
     Log::log(LOG, " Hooking Paint...");
     Paint::original = (Paint::func)VMT::hook(Interfaces::engineVgui, (void*)Paint::hook, 15);
 
-    /*Log::log(LOG, " Hooking DrawModelExecute...");
+    Log::log(LOG, " Hooking DrawModelExecute...");
     DrawModelExecute::original = (DrawModelExecute::func)VMT::hook(Interfaces::modelRender, (void*)DrawModelExecute::hook, 21);
-*/ 
+ 
     Log::log(LOG, " Hooking FrameStageNotify...");
     FrameStageNotify::original = (FrameStageNotify::func)VMT::hook(Interfaces::client, (void*)FrameStageNotify::hook, 37);
 
@@ -65,8 +65,8 @@ bool Hooks::unload() {
     Log::log(LOG, " Unhooking Paint...");
     VMT::hook(Interfaces::engineVgui, (void*)Paint::original, 15);
 
-    //Log::log(LOG, " Unhooking DME...");
-    //VMT::hook(Interfaces::modelRender, (void*)DrawModelExecute::original, 21);
+    Log::log(LOG, " Unhooking DME...");
+    VMT::hook(Interfaces::modelRender, (void*)DrawModelExecute::original, 21);
 
     Log::log(LOG, " Unhooking FSN...");
     VMT::hook(Interfaces::client, (void*)FrameStageNotify::original, 37);
