@@ -19,7 +19,7 @@ yeah it's a shitty fork....
 
 ### Debian / Ubuntu / Pop OS / Linux Mint required packages:
 
-```sudo apt install -y libsdl2-dev cmake git gcc-10 g++-10 gdb clang
+```sudo apt install -y libsdl2-dev cmake git gcc-10 g++-10 gdb clang```
 
 ### Arch / Manjaro required packages:
 
