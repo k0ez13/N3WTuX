@@ -4,9 +4,13 @@
 
 ### Features added
 .so changer name on every new build
+
 another injection method
+
 menu with changed colors and tabs
+
 some features removed and others added
+
 yeah it's a shitty fork....
 
 
