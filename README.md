@@ -3,18 +3,19 @@
 </p>
 
 ### Features added
-```.so changer name on every new build
+.so changer name on every new build
 another injection method
 menu with changed colors and tabs
 some features removed and others added
-yeah it's a shitty fork....```
+yeah it's a shitty fork....
+
 
 
 ### How to use
 
 ### Debian / Ubuntu / Pop OS / Linux Mint required packages:
 
-```sudo apt install -y libsdl2-dev cmake git gcc-10 g++-10 gdb clang```
+```sudo apt install -y libsdl2-dev cmake git gcc-10 g++-10 gdb clang
 
 ### Arch / Manjaro required packages:
 
